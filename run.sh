@@ -18,7 +18,7 @@ install_jmeter()
     ~/jmeter/bin/PluginsManagerCMD.sh install jpgc-standard
     cp $PWD/config/jmeter.properties ~/jmeter/bin/jmeter.properties
     LANG=C ~/jmeter/bin/create-rmi-keystore.sh
-    sudo cp ~/rmi_keystore.jks /
+    sudo cp $PWD/rmi_keystore.jks /
     ~/jmeter/bin/jmeter -v
 }
 
