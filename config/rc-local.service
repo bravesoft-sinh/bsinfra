@@ -13,6 +13,7 @@ ConditionFileIsExecutable=/etc/rc.d/rc.local
 After=network.target
 
 [Service]
+LimitNOFILE=20480
 Type=forking
 ExecStart=/etc/rc.d/rc.local start
 TimeoutSec=0
