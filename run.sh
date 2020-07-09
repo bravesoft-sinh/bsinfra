@@ -31,6 +31,13 @@ install_jmeter_service()
     sudo sysctl -p
     ps -ax | grep jmeter
 }
+clean_folder()
+{
+    rm -rf *apache-jmeter
+    rm -rf jmeter.log
+    rm -rf rmi_keystore.jks
+}
 install_java
 install_jmeter
 install_jmeter_service
+clean_folder
