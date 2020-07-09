@@ -23,13 +23,11 @@ install_jmeter()
 
 install_jmeter_service()
 {
-    sudo echo /home/centos/jmeter/bin/jmeter-server & >> /etc/rc.d/rc.local
+    sudo cp $PWD/config/c.local /etc/rc.d/rc.local
     sudo chmod +x /etc/rc.d/rc.local
-    sudo awk 'NR==16{print "LimitNOFILE=20480}1' /usr/lib/systemd/system/rc-local.service
-    sudo echo * soft nofile 20480 >> /etc/security/limits.conf
-    sudo echo * hard nofile 20480 >> /etc/security/limits.conf
-    sudo echo net.ipv4.tcp_tw_reuse=1 >> /etc/sysctl.conf
-    sudo echo net.ipv4.tcp_fin_timeout=5 >>/etc/sysctl.conf
+    sudo cp $PWD/config/rc-local.service /usr/lib/systemd/system/rc-local.service
+    sudo cp $PWD/config/limits.conf /etc/security/limits.conf
+    sudo cp $PWD/config/sysctl.conf /etc/sysctl.conf
     sudo sysctl -p
     ps -ax | grep jmeter
 }
