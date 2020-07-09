@@ -3,7 +3,7 @@ install_java()
     sudo yum update -y
     sudo yum -y install wget
     sudo yum -y install java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64
-    java -version   
+    java -version
 }
 
 install_jmeter()
