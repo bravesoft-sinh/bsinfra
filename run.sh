@@ -15,7 +15,7 @@ install_jmeter()
     wget http://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-manager/1.3/jmeter-plugins-manager-1.3.jar -O ~/jmeter/lib/ext/jmeter-plugins-manager-1.3.jar
     java -cp ~/jmeter/lib/ext/jmeter-plugins-manager-1.3.jar org.jmeterplugins.repository.PluginManagerCMDInstaller
     ~/jmeter/bin/PluginsManagerCMD.sh install jpgc-standard
-    sed -i '533s/#jmeter.save/jmeter.save/' ~/jmeter/bin/jmeter.properties
+    cp $PWD/config/jmeter.properties ~/jmeter/bin/jmeter.properties
     LANG=C ~/jmeter/bin/create-rmi-keystore.sh
     sudo cp ~/rmi_keystore.jks /
     ~/jmeter/bin/jmeter -v
