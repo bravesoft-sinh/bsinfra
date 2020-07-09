@@ -23,7 +23,7 @@ install_jmeter()
 
 install_jmeter_service()
 {
-    sudo cp $PWD/config/c.local /etc/rc.d/rc.local
+    sudo cp $PWD/config/rc.local /etc/rc.d/rc.local
     sudo chmod +x /etc/rc.d/rc.local
     sudo cp $PWD/config/rc-local.service /usr/lib/systemd/system/rc-local.service
     sudo cp $PWD/config/limits.conf /etc/security/limits.conf
@@ -37,7 +37,7 @@ clean_folder()
     rm -rf jmeter.log
     rm -rf rmi_keystore.jks
 }
+clean_folder
 install_java
 install_jmeter
 install_jmeter_service
-clean_folder
