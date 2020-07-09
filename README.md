@@ -9,5 +9,5 @@
 ## masterインストール
 * `./master.sh`を実行する
 
-## masterインストール
+## slaveインストール
 * `./slave.sh`を実行する
