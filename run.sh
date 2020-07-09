@@ -28,7 +28,7 @@ install_jmeter_service()
     sudo awk 'NR==16{print "LimitNOFILE=20480}1' /usr/lib/systemd/system/rc-local.service
     sudo echo * soft nofile 20480 >> /etc/security/limits.conf
     sudo echo * hard nofile 20480 >> /etc/security/limits.conf
-    sudo echo net.ipv4.tcp_tw_reuse=1 >>
+    sudo echo net.ipv4.tcp_tw_reuse=1 >> /etc/sysctl.conf
     sudo echo net.ipv4.tcp_fin_timeout=5 >>/etc/sysctl.conf
     sudo sysctl -p
     ps -ax | grep jmeter
