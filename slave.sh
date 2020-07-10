@@ -34,9 +34,10 @@ install_jmeter_service()
 }
 clean_folder()
 {
-    rm -rf apache-jmeter*
-    rm -rf jmeter.log
-    rm -rf rmi_keystore.jks
+    rm -rf $PWD/apache-jmeter*
+    rm -rf $PWD/jmeter.log
+    rm -rf $PWD/rmi_keystore.jks
+    
 }
 install_java
 install_jmeter
